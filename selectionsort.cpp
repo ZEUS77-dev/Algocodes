@@ -8,7 +8,7 @@ int main()
 	int a[n];
 	for (int i = 0; i < n; ++i)
 	{
-		cin >> a[i];
+		cin >> a[i]; //O(n-1)
 	}
 	for (int i = 0; i < n; ++i)
 	{
@@ -17,13 +17,13 @@ int main()
 		{
 			if (a[j] < a[minIndex])
 			{
-				minIndex = j;
+				minIndex = j; //O(N^2)
 			}
 		}
 		swap(a[i], a[minIndex]);
 	}
 	for (int i = 0; i < n; i++)
 	{
-		cout << a[i] << " ";
+		cout << a[i] << " "; //O(1)
 	}
-}
+} //overall O(N^2)
