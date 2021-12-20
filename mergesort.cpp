@@ -23,14 +23,14 @@ void merge(int l, int r, int mid)
     int r_i = 0;
     for (int i = 0; i <= r; i++)
     {
-        if (L[l_i] <= R[r_i])    //left array construction
+        if (L[l_i] <= R[r_i]) //left array construction
         {
             a[i] = L[l_i];
             l_i++;
         }
         else
         {
-            a[i] = R[r_i];    // right array construction
+            a[i] = R[r_i]; // right array construction
             r_i++;
         }
     }
@@ -39,7 +39,7 @@ void merge(int l, int r, int mid)
 void mergeSort(int l, int r)
 {
     if (l == r)
-        return;                    //mergesort function
+        return; //mergesort function
     int mid = (l + r) / 2;
     mergeSort(l, mid);
     mergeSort(mid + 1, r);
@@ -52,10 +52,11 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
-    }                                         //main function
+    } //main function
     mergeSort(0, n - 1);
     for (int i = 0; i < n; i++)
     {
         cout << a[i] << " ";
     }
 }
+//total complexity = O(Nlog(2)N)
