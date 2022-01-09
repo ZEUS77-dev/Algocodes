@@ -25,7 +25,7 @@ int main()
         {
             hi = mid;
         }
-    }
+    } //OVERALL T.C = log2 (N)//
 
     if (v[lo] == to_find)
     {
