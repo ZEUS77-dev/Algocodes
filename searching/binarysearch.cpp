@@ -16,7 +16,7 @@ int main()
     int mid;
     while (hi - lo > 1)
     {
-        int mid = (hi + lo) / 2;
+        int mid = (hi + lo) / 2; //to prevent overflow mid=lo +(hi-lo)/2 can also be used
         if (v[mid] < to_find)
         {
             lo = mid + 1;
