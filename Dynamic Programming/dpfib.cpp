@@ -27,6 +27,7 @@ void flg(int i){
  // 0 1 1 2 3 4 8
  	//func(n)-->> nth fib number
  int dp[N];
+ //TOP DOWN APPROACH
  
  int fib(int n){
  	
