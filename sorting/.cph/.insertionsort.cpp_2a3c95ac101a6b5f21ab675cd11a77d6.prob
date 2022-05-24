@@ -1,0 +1,1 @@
+{"name":"Local: insertionsort","url":"c:\\Users\\Devadutta\\Documents\\Algocodes\\sorting\\insertionsort.cpp","tests":[{"id":1653395990494,"input":"1\n12","output":"n 12"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Devadutta\\Documents\\Algocodes\\sorting\\insertionsort.cpp","group":"local","local":true}
