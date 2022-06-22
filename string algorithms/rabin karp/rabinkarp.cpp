@@ -36,11 +36,53 @@ template <class T> void _print(vector <T> v) {cerr << "[ "; for (T i : v) {_prin
 template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
-template <class T, class V> void _print(unordered_map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";} 
+ 
 //main// 
-//if sorted given always first think of any binary search approach then proceed
-
+vector<int> rabin_karp(string& T,string& P){
+    int n=T.size();//size text
+    int m=P.size();//size pattern
+    int q=INF;
+    int x=11; //prime multiplier
+    int x_m=1; // x^(m-1)used for next hash computation storing prev hash val
+    int hash_P=0; //hash pattern 
+    int hash_T=0; //hash text
+    vector<int> ans;
+    for(int i=0;i<m-1;i++){
+        x_m=(x_m*x)%q;
+    }
+    for(int i=0;i<m;i++){
+           hash_P=(hash_P*x+P[i])%q;
+           hash_T=(hash_T*x+T[i])%q;
+    }
+    for(int i=0;i<n-m+1;i++){
+        if(hash_P==hash_T){
+            //possibility of match
+            bool found =true;
+            for(int j=0;j<m;j++){
+                if(P[j]!=T[i+j]){
+                    found=false;
+                    break;
+                }
+            }
+            if(found)ans.push_back(i);
+        }
+        //if it was not last windows ,then continue hash computation
+        if(i<n-m){
+            hash_T=(x*(hash_T - T[i]*x_m ) +T[i+m]);
+            if(hash_T<0)
+            hash_T+=q;
+        }
+    }
+    return ans;
+    
+}
 int main(){
- 
- 
+  
+  string T="AAABCAAABCAADAABAABCAB";
+  string P="ABCA";
+  vector<int> ans=rabin_karp(T,P);
+  for(auto val:ans){
+    cout<<val<<" "<<nline;
+  }
+    return 0;
 }
