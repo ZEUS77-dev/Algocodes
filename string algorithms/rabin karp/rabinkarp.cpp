@@ -5,7 +5,9 @@ using namespace std;
 typedef long long int ll;
 const ll INF = 1e9 + 7;
 const ll MOD = 998244353;
+
 // definition files//;
+
 #define loop(i, a, n) for (ll i = a; i < n; i++)
 #define pb(x) push_back(x)
 #define nline '\n'
@@ -19,6 +21,7 @@ const ll MOD = 998244353;
 #define Vmin(x) *min_element(all(x))
 #define fix(prec) cout << setprecision(prec) << fixed;
 #define charToInt(c) (c - '0')
+
  
 void _print(ll t) {cerr << t;}
 void _print(int t) {cerr << t;}
