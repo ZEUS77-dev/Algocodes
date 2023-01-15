@@ -1,7 +1,16 @@
-void dfs(int v,vector<int> adj[],vector<bool> &vis) {
-    vis[v] = true;
-    for (int u : adj[v]) {
-        if (!vis[u])
-            dfs(u,adj,vis);
+void dfs(int node, vector<int> adj[], vector<bool> &vis)
+{
+    vis[node] = true;
+    // cout << node << " ";
+    for (auto x : adj[node])
+    {
+        if (vis[x])
+        {
+            ;
+        }
+        else
+        {
+            dfs(x, adj, vis);
+        }
     }
 }
